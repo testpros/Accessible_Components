@@ -1,0 +1,95 @@
+@charset "utf-8";
+html,
+body {
+  margin: 0;
+  padding: 50px 0;
+  font-family: sans-serif;
+  background-color: #fff;
+  text-align: center;
+}
+header,
+main,
+footer {
+  display: block;
+  width: 800px;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+  text-align: left;
+}
+.flexrow {
+  display: flex;
+  flex-flow: row nowrap;
+}
+p {
+  margin: 10px 0;
+}
+a {
+  color: #f76;
+  text-decoration: none;
+}
+input[type=text] {
+  padding: 8px 12px;
+  font: inherit;
+  border: 1px solid #ccc;
+  -webkit-border-top-left-radius: 3px;
+  -webkit-border-top-right-radius: 3px;
+  -webkit-border-bottom-left-radius: 3px;
+  -webkit-border-bottom-right-radius: 3px;
+  -moz-border-radius-topleft: 3px;
+  -moz-border-radius-topright: 3px;
+  -moz-border-radius-bottomleft: 3px;
+  -moz-border-radius-bottomright: 3px;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+button {
+  display: inline-block;
+  margin: 2px;
+  padding: 8px 12px;
+  border: none;
+  -webkit-border-top-left-radius: 3px;
+  -webkit-border-top-right-radius: 3px;
+  -webkit-border-bottom-left-radius: 3px;
+  -webkit-border-bottom-right-radius: 3px;
+  -moz-border-radius-topleft: 3px;
+  -moz-border-radius-topright: 3px;
+  -moz-border-radius-bottomleft: 3px;
+  -moz-border-radius-bottomright: 3px;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  -webkit-box-shadow: inset -1px -1px 0 rgba(0, 0, 0, 0.25), inset 1px 1px 0 rgba(255, 255, 255, 0.25);
+  -moz-box-shadow: inset -1px -1px 0 rgba(0, 0, 0, 0.25), inset 1px 1px 0 rgba(255, 255, 255, 0.25);
+  box-shadow: inset -1px -1px 0 rgba(0, 0, 0, 0.25), inset 1px 1px 0 rgba(255, 255, 255, 0.25);
+  background-color: #f76;
+  color: #fff;
+  font: inherit;
+  cursor: pointer;
+}
+button:hover,
+button:focus {
+  background-color: #ff8e80;
+}
+button:active {
+  box-shadow: none;
+}
+button[disabled],
+button[disabled]:active,
+button[disabled]:hover,
+button[disabled]:focus {
+  background-color: #ddd;
+  color: #ccc;
+  box-shadow: none;
+  cursor: default;
+}
+.ik_readersonly {
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  text-indent: -10000px;
+}

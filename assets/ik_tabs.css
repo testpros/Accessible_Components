@@ -1,0 +1,45 @@
+@charset "utf-8";
+.ik_tabs .ik_tabbar {
+  display: flex;
+  flex-flow: row nowrap;
+  list-style: none;
+  margin: 0 0 -1px 0;
+  padding: 0;
+  z-index: 999;
+}
+.ik_tabs .ik_tabbar li {
+  margin: 0 2px 1px 0;
+  padding: 10px 15px;
+  border: 1px solid #ff4a33;
+  background-color: #f76;
+  color: #fff;
+  cursor: pointer;
+  -webkit-border-top-left-radius: 6px;
+  -webkit-border-top-right-radius: 6px;
+  -webkit-border-bottom-left-radius: 0;
+  -webkit-border-bottom-right-radius: 0;
+  -moz-border-radius-topleft: 6px;
+  -moz-border-radius-topright: 6px;
+  -moz-border-radius-bottomleft: 0;
+  -moz-border-radius-bottomright: 0;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  border-bottom: none;
+}
+.ik_tabs .ik_tabbar li.selected {
+  margin-bottom: 0;
+  background-color: #fff;
+  border-color: #ccc;
+  color: #000;
+}
+.ik_tabs .ik_tabpanel {
+  display: none;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+  padding: 10px 20px;
+  min-height: 150px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+}

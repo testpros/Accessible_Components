@@ -1,0 +1,50 @@
+@charset "utf-8";
+.ik_tooltip {
+  position: absolute;
+  max-width: 200px;
+  padding: 5px 10px;
+  left: 0;
+  background-color: #ffd;
+  font-size: 90%;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  -webkit-border-top-left-radius: 3px;
+  -webkit-border-top-right-radius: 3px;
+  -webkit-border-bottom-left-radius: 3px;
+  -webkit-border-bottom-right-radius: 3px;
+  -moz-border-radius-topleft: 3px;
+  -moz-border-radius-topright: 3px;
+  -moz-border-radius-bottomleft: 3px;
+  -moz-border-radius-bottomright: 3px;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  -webkit-box-shadow: 0 2px 5px -2px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0 2px 5px -2px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 2px 5px -2px rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out, transform 0.2s ease-in-out;
+}
+.ik_tooltip.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+}
+.ik_tooltip:after {
+  display: block;
+  content: '';
+  position: absolute;
+  width: 11px;
+  height: 11px;
+  left: 20px;
+  bottom: -7px;
+  transform: rotate(45deg);
+  background-color: #ffc;
+  border-right: 1px solid rgba(0, 0, 0, 0.5);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 2px 2px 4px -2px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 2px 2px 4px -2px rgba(0, 0, 0, 0.5);
+  box-shadow: 2px 2px 4px -2px rgba(0, 0, 0, 0.5);
+}

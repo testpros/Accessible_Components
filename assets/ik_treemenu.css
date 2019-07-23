@@ -1,0 +1,110 @@
+@charset "utf-8";
+.ik_treemenu {
+  width: 240px;
+  margin: 10px 50px 10px 0;
+  flex-shrink: 0;
+}
+.ik_treemenu .title {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+.ik_treemenu span {
+  display: block;
+  margin: -2px 0 0 -5px;
+  padding: 2px 5px;
+  border-radius: 3px;
+}
+.ik_treemenu span:hover {
+  background-color: #ffd2cc;
+}
+.ik_treemenu .folder {
+  display: block;
+  font-weight: bold;
+}
+.ik_treemenu .folder:before {
+  content: '\2212';
+  display: block;
+  position: absolute;
+  top: 6px;
+  left: -20px;
+  width: 9px;
+  height: 9px;
+  line-height: 7px;
+  font-weight: normal;
+  font-size: .65em;
+  text-align: center;
+  background-color: #fff;
+  color: #f76;
+  border: 1px solid #f76;
+  -webkit-border-top-left-radius: 2px;
+  -webkit-border-top-right-radius: 2px;
+  -webkit-border-bottom-left-radius: 2px;
+  -webkit-border-bottom-right-radius: 2px;
+  -moz-border-radius-topleft: 2px;
+  -moz-border-radius-topright: 2px;
+  -moz-border-radius-bottomleft: 2px;
+  -moz-border-radius-bottomright: 2px;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+  border-bottom-left-radius: 2px;
+  border-bottom-right-radius: 2px;
+  z-index: 1;
+}
+.ik_treemenu ul {
+  display: block;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.ik_treemenu ul li {
+  position: relative;
+  display: block;
+  margin-left: 20px;
+  padding: 2px 0;
+  border-radius: 3px;
+  transition: background-color 0.2s ease;
+  cursor: pointer;
+  outline: none;
+}
+.ik_treemenu ul li:before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: -15px;
+  width: 12px;
+  height: 100%;
+  border-left: 1px solid #f76;
+}
+.ik_treemenu ul li:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: -15px;
+  width: 12px;
+  height: .7em;
+  border-bottom: 1px solid #f76;
+}
+.ik_treemenu ul li:last-of-type:before {
+  height: .7em;
+  border-bottom: 1px solid #f76;
+}
+.ik_treemenu ul li:last-of-type:after {
+  display: none;
+}
+.ik_treemenu ul li:focus > span {
+  background-color: #f76;
+  color: #fff;
+}
+.ik_treemenu ul li.collapsed ul {
+  display: none;
+}
+.ik_treemenu ul li.collapsed .folder:before {
+  content: '+';
+  background-color: #f76;
+  color: #fff;
+}
+.ik_treemenu .mouseover {
+  background-color: #ffd2cc;
+}

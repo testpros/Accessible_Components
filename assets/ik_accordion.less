@@ -1,0 +1,105 @@
+@charset "utf-8";
+
+// colors
+
+@primary_bg: #f76;
+@primary_fg: #fff;
+@widget_bg: #eee;
+@widget_fg: #333;
+@tooltip_bg: #ffd;
+
+// mixins 
+
+.border-radius(@tl: 3px, @tr: 3px, @bl: 3px, @br: 3px) {
+	-webkit-border-top-left-radius: @tl;
+	-webkit-border-top-right-radius: @tr;
+	-webkit-border-bottom-left-radius: @bl;
+	-webkit-border-bottom-right-radius: @br;
+	-moz-border-radius-topleft: @tl;
+	-moz-border-radius-topright: @tr;
+	-moz-border-radius-bottomleft: @bl;
+	-moz-border-radius-bottomright: @br;
+	border-top-left-radius: @tl;
+	border-top-right-radius: @tr;
+	border-bottom-left-radius: @bl;
+	border-bottom-right-radius: @br;
+	
+}
+.box-shadow(@left: 0, @top: 2px, @blur: 5px) {
+	-webkit-box-shadow: @left @top @blur -2px rgba(0, 0, 0, .5);
+	-moz-box-shadow: @left @top @blur -2px rgba(0, 0, 0, .5);
+	box-shadow: @left @top @blur -2px rgba(0, 0, 0, .5);
+}
+.inset-shadow-border() {
+	-webkit-box-shadow: inset -1px -1px 0 rgba(0, 0, 0, .25), inset 1px 1px 0 rgba(255, 255, 255, .25);
+	-moz-box-shadow: inset -1px -1px  0 rgba(0, 0, 0, .25), inset 1px 1px 0 rgba(255, 255, 255, .25);
+	box-shadow: inset -1px -1px 0 rgba(0, 0, 0, .25), inset 1px 1px 0 rgba(255, 255, 255, .25);
+}
+
+// accordion
+
+.ik_accordion {
+	margin: 10px 0;
+	padding: 0;
+	
+	dt {
+		position: relative;
+		margin: 0;
+		padding: 0;
+		
+		.button {
+			padding: 10px 10px 10px 30px;
+			background-color: @primary_bg;
+			color: @primary_fg;
+			.inset-shadow-border();
+			cursor: pointer;
+			transition: background-color .2s ease;
+			
+			&:before {
+				content: "";
+				position: absolute;
+				top: 50%;
+				left: 12px;
+				width: 5px;
+				height: 5px;
+				margin-top: -4px;
+				border-top: 2px solid @primary_fg;
+				border-right: 2px solid @primary_fg;
+				transform: rotateZ(45deg);
+				transition: transform .2s ease;
+			}
+			&.expanded:before {
+				transform: rotateZ(135deg);
+			}
+			&:hover,
+			&:focus {
+				background-color: lighten(@primary_bg, 5%);
+			}
+		}
+		
+		&:first-of-type {
+			.button {
+				.border-radius(6px, 6px, 0, 0);
+			}
+		}
+		&:last-of-type {
+			.button {
+				.border-radius(0, 0, 6px, 6px);
+				
+				&.expanded {
+					.border-radius(0, 0, 0, 0);
+				}
+			}
+		}		
+	}
+	dd {
+		margin: -1px 0;
+		padding: 10px;
+		background-color: #fff;
+		border: 1px solid #ccc;
+		
+		&:last-of-type {
+			.border-radius(0, 0, 6px, 6px);
+		}
+	}
+}

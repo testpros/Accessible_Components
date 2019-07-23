@@ -1,0 +1,92 @@
+
+@charset "utf-8";
+
+// colors
+
+@primary_bg: #f76;
+@primary_fg: #fff;
+@widget_bg: #eee;
+@widget_fg: #333;
+@tooltip_bg: #ffd;
+
+// mixins 
+
+.border-radius(@tl: 3px, @tr: 3px, @bl: 3px, @br: 3px) {
+	-webkit-border-top-left-radius: @tl;
+	-webkit-border-top-right-radius: @tr;
+	-webkit-border-bottom-left-radius: @bl;
+	-webkit-border-bottom-right-radius: @br;
+	-moz-border-radius-topleft: @tl;
+	-moz-border-radius-topright: @tr;
+	-moz-border-radius-bottomleft: @bl;
+	-moz-border-radius-bottomright: @br;
+	border-top-left-radius: @tl;
+	border-top-right-radius: @tr;
+	border-bottom-left-radius: @bl;
+	border-bottom-right-radius: @br;
+	
+}
+.box-shadow(@left: 0, @top: 2px, @blur: 5px) {
+	-webkit-box-shadow: @left @top @blur -2px rgba(0, 0, 0, .5);
+	-moz-box-shadow: @left @top @blur -2px rgba(0, 0, 0, .5);
+	box-shadow: @left @top @blur -2px rgba(0, 0, 0, .5);
+}
+.inset-shadow-border() {
+	-webkit-box-shadow: inset -1px -1px 0 rgba(0, 0, 0, .25), inset 1px 1px 0 rgba(255, 255, 255, .25);
+	-moz-box-shadow: inset -1px -1px  0 rgba(0, 0, 0, .25), inset 1px 1px 0 rgba(255, 255, 255, .25);
+	box-shadow: inset -1px -1px 0 rgba(0, 0, 0, .25), inset 1px 1px 0 rgba(255, 255, 255, .25);
+}
+
+// sortable 
+
+.ik_sortable {
+	margin: 20px 0;
+	padding: 0;
+	overflow: hidden;
+		
+	ul{
+		margin: 20px 0;
+		padding: 0;
+		list-style: none;
+		
+		li {
+			display: block;
+			list-style: none;
+			position: relative;
+			box-sizing: border-box;
+			margin: 5px 0;
+			padding: 10px;
+			background-color: #eee;
+			.border-radius(2px, 2px, 2px, 2px);
+			//.inset-shadow-border();
+			cursor: pointer;
+			
+			&:hover,
+			&:focus {
+				background-color: @primary_bg;
+				color: @primary_fg;
+			}
+		}
+	}
+	.dragover {
+		position: relative;
+		
+		&:after {
+			content: '';
+			display: block;
+			position: absolute;
+			height: 3px;
+			left: 0;
+			top: -4px;
+			bottom: auto;
+			width: 100%;
+			background-color: @primary_bg;
+			z-index: 9;
+		}
+		
+		&.dropafter:after {
+			top: auto;
+			bottom: -4px;
+		}
+	}
+} 

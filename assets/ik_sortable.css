@@ -1,0 +1,57 @@
+@charset "utf-8";
+.ik_sortable {
+  margin: 20px 0;
+  padding: 0;
+  overflow: hidden;
+}
+.ik_sortable ul {
+  margin: 20px 0;
+  padding: 0;
+  list-style: none;
+}
+.ik_sortable ul li {
+  display: block;
+  list-style: none;
+  position: relative;
+  box-sizing: border-box;
+  margin: 5px 0;
+  padding: 10px;
+  background-color: #eee;
+  -webkit-border-top-left-radius: 2px;
+  -webkit-border-top-right-radius: 2px;
+  -webkit-border-bottom-left-radius: 2px;
+  -webkit-border-bottom-right-radius: 2px;
+  -moz-border-radius-topleft: 2px;
+  -moz-border-radius-topright: 2px;
+  -moz-border-radius-bottomleft: 2px;
+  -moz-border-radius-bottomright: 2px;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+  border-bottom-left-radius: 2px;
+  border-bottom-right-radius: 2px;
+  cursor: pointer;
+}
+.ik_sortable ul li:hover,
+.ik_sortable ul li:focus {
+  background-color: #f76;
+  color: #fff;
+}
+.ik_sortable .dragover {
+  position: relative;
+}
+.ik_sortable .dragover:after {
+  content: '';
+  display: block;
+  position: absolute;
+  height: 3px;
+  left: 0;
+  top: -4px;
+  bottom: auto;
+  width: 100%;
+  background-color: #f76;
+  z-index: 9;
+}
+.ik_sortable .dragover.dropafter:after {
+  top: auto;
+  bottom: -4px;
+}
